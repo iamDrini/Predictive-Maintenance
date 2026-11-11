@@ -1,0 +1,8 @@
+{
+  "sensor_id": "MOTOR_BEARING_01",
+  "timestamp": "2026-11-06T16:16:05.924849",
+  "temperature_celsius": 66.05,
+  "vibration_mms": 2.43,
+  "rpm": 1507,
+  "simulated_anomaly": false
+}
