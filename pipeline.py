@@ -14,11 +14,11 @@ builder = SparkSession.builder \
 
 spark = delta.configure_spark_with_delta_pip(builder).getOrCreate()
 
-print("🚀 PySpark Session erfolgreich gestartet!")
+print("Session erfolgreich gestartet!")
 
 # Sicherheitsprüfung & Einlesen der Bronze-Schicht
 if not os.path.exists(BRONZE_DIR) or not os.listdir(BRONZE_DIR):
-    print("❌ Keine Rohdaten in data/bronze gefunden!")
+    print("Keine Rohdaten in data/bronze gefunden!")
 else:
     # Wichtig: multiLine=True fängt deine formatierten JSON-Dateien ab
     df_bronze = spark.read \
@@ -44,7 +44,7 @@ else:
         .mode("overwrite") \
         .save(SILVER_DIR)
 
-    print("🎉 Silver-Schicht erfolgreich als Delta-Tabelle gespeichert!")
+    print("Silver-Schicht erfolgreich als Delta-Tabelle gespeichert!")
 
     print("\n--- Daten-Vorschau (SILVER LAYER) ---")
     df_silver.show(10, truncate=False)

@@ -30,9 +30,9 @@ try:
             base_temp += anomaly_factor * 0.5
             base_rpm -= int(anomaly_factor * 10)
             is_anomaly_injected = True
-            print(f"⚠️ [STEP {step}] SIMULIERTER VERSCHLEISS: Vibration = {base_vibration:.2f} mm/s")
+            print(f"[STEP {step}] SIMULIERTER VERSCHLEISS: Vibration = {base_vibration:.2f} mm/s")
         else:
-            print(f"🟢 [STEP {step}] Normalbetrieb: Vibration = {base_vibration:.2f} mm/s")
+            print(f"[STEP {step}] Normalbetrieb: Vibration = {base_vibration:.2f} mm/s")
 
         # Datensatz aufbauen
         record = {
@@ -54,4 +54,4 @@ try:
         time.sleep(2)  # Alle 2 Sekunden ein neues Event
 
 except KeyboardInterrupt:
-    print("\n🛑 Generator gestoppt.")
+    print("\nGenerator gestoppt.")
